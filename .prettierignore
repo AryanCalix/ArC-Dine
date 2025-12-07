@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+dist
+*.log
+.cache
+public
+.vercel
+.env*.local
+package-lock.json
+yarn.lock

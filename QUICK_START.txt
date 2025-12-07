@@ -1,0 +1,168 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║        🍽️  RESTAURANT MENU WEBSITE - QUICK START 🍽️         ║
+║                                                              ║
+║             Orange & Black Theme | 3D Animation             ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 WHAT YOU GOT:
+================
+✅ Full-stack Next.js website
+✅ Orange & black color scheme
+✅ 3D spinning food animation (Three.js)
+✅ Bottom navigation bar
+✅ 5 menu items (Geprek Yuks, Coto Dawata, Americano, Mie Gacoan, Milk)
+✅ Shopping cart system
+✅ Transaction management (localStorage)
+✅ Order history
+✅ Fully responsive design
+✅ Complete documentation
+
+
+🚀 HOW TO RUN:
+===============
+1. Open terminal in this folder
+
+2. Install dependencies:
+   npm install
+   
+3. Start development server:
+   npm run dev
+   
+4. Open browser:
+   http://localhost:3000
+
+That's it! Your website is running! 🎉
+
+
+📁 PROJECT FILES:
+=================
+Main Files:
+- app/page.tsx          → Main homepage
+- components/           → All UI components
+- context/CartContext   → Shopping cart & orders logic
+
+Documentation:
+- README.md            → Full documentation
+- SETUP_GUIDE.md       → Installation help
+- FEATURES.md          → Complete features list
+- PROJECT_STRUCTURE.md → File organization
+
+
+🎨 CUSTOMIZE:
+=============
+→ Change menu items:      components/MenuGrid.tsx
+→ Change colors:          tailwind.config.js
+→ Modify 3D animation:    components/Hero3D.tsx
+→ Adjust navigation:      components/BottomNav.tsx
+
+
+💾 TRANSACTION DATA:
+====================
+All handled automatically! The system manages:
+✓ Shopping cart (add/remove/update)
+✓ Order history with timestamps
+✓ Automatic order IDs (ORD-xxxxx)
+✓ Total calculations
+✓ Data persistence (saves in browser)
+✓ Order status tracking
+
+No database needed - everything stored in browser localStorage!
+
+
+📱 FEATURES:
+============
+🛒 Shopping Cart:
+   - Add items from menu
+   - Update quantities (+/-)
+   - Remove items
+   - See total price
+   - Checkout to create order
+
+📋 Order History:
+   - View all past orders
+   - Order details with timestamps
+   - Status badges (pending/completed)
+   - Item breakdown per order
+
+🧭 Navigation:
+   - Menu tab (browse items)
+   - Orders tab (view history)
+   - Cart button (with item counter)
+
+
+🌐 DEPLOYMENT:
+==============
+Build for production:
+   npm run build
+   npm start
+
+Deploy to Vercel (Free):
+1. Push to GitHub
+2. Go to vercel.com
+3. Import your repo
+4. Click deploy!
+
+
+🐛 TROUBLESHOOTING:
+===================
+❌ "npm not found"
+   → Install Node.js from nodejs.org
+
+❌ Port 3000 in use
+   → Run: npm run dev -- -p 3001
+
+❌ 3D not showing
+   → Update your browser to latest version
+   → Enable hardware acceleration
+
+❌ Cart not saving
+   → Check localStorage is enabled in browser
+   → Clear browser cache
+
+
+📚 DOCUMENTATION:
+=================
+Read these files for more details:
+1. README.md          → Complete guide
+2. SETUP_GUIDE.md     → Installation help
+3. FEATURES.md        → All features explained
+4. PROJECT_STRUCTURE  → How files are organized
+
+
+💡 TIPS:
+========
+• Use Chrome or Edge for best 3D performance
+• Cart data saves automatically (no login needed)
+• All prices in Indonesian Rupiah (IDR)
+• Fully responsive - works on mobile/tablet/desktop
+• TypeScript enabled for type safety
+• Tailwind CSS for easy styling
+
+
+🎯 TECH STACK:
+==============
+Framework:     Next.js 14 (React)
+Language:      TypeScript
+Styling:       Tailwind CSS
+3D Graphics:   Three.js + React Three Fiber
+Animations:    Framer Motion
+State:         React Context API
+Storage:       Browser localStorage
+
+
+🎉 YOU'RE ALL SET!
+==================
+Your restaurant menu website is ready to use!
+
+Just run:  npm install && npm run dev
+
+Then open: http://localhost:3000
+
+Enjoy! 🍕☕🍜
+
+
+═══════════════════════════════════════════════════════════════
+         Built with ❤️  | Customized for Your Restaurant
+═══════════════════════════════════════════════════════════════
