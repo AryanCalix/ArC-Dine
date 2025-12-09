@@ -45,10 +45,10 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-primary-orange/20">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🛒 Your Cart</h2>
+              <h2 className="text-2xl font-bold text-gray-900">🛒 Your Cart</h2>
               <button
                 onClick={onClose}
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white text-2xl transition-colors"
+                className="text-gray-600 hover:text-gray-900 text-2xl transition-colors"
               >
                 ✕
               </button>
@@ -59,8 +59,8 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
               {cart.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="text-6xl mb-4">🛒</div>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg font-semibold">Your cart is empty</p>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">Add some delicious items!</p>
+                  <p className="text-gray-600 text-lg font-semibold">Your cart is empty</p>
+                  <p className="text-gray-500 text-sm mt-2">Add some delicious items!</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -76,7 +76,7 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
                       <div className="text-4xl">{item.image}</div>
                       
                       <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 dark:text-white">{item.name}</h3>
+                        <h3 className="font-bold text-gray-900">{item.name}</h3>
                         <p className="text-primary-orange font-bold text-lg">
                           Rp {item.price.toLocaleString('id-ID')}
                         </p>
@@ -89,7 +89,7 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
                         >
                           -
                         </button>
-                        <span className="w-8 text-center font-bold text-gray-900 dark:text-white">{item.quantity}</span>
+                        <span className="w-8 text-center font-bold text-gray-900">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           className="w-8 h-8 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition-colors font-bold"
@@ -114,7 +114,7 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
             {cart.length > 0 && (
               <div className="p-6 border-t-2 border-primary-orange/30 bg-gradient-to-b from-white to-orange-50">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xl font-bold text-gray-900 dark:text-white">Total:</span>
+                  <span className="text-xl font-bold text-gray-900">Total:</span>
                   <span className="text-3xl font-bold text-primary-orange drop-shadow-sm">
                     Rp {getCartTotal().toLocaleString('id-ID')}
                   </span>

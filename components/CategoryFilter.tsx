@@ -20,7 +20,7 @@ export default function CategoryFilter({ categories, activeCategory, onCategoryC
           className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
             activeCategory === category
               ? 'bg-primary-orange text-white shadow-lg shadow-primary-orange/40 scale-105'
-              : 'bg-white/90 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-primary-orange/30 hover:border-primary-orange hover:text-primary-orange hover:scale-105 shadow-md'
+              : 'bg-white/90 text-gray-700 border-2 border-primary-orange/30 hover:border-primary-orange hover:text-primary-orange hover:scale-105 shadow-md'
           }`}
         >
           {category}
