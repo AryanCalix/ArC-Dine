@@ -85,7 +85,7 @@ export default function Hero3D() {
           Delicious Food, Delivered Fresh 🍽️
         </p>
         <p className="text-sm md:text-base text-white/70 mt-4 font-semibold tracking-widest backdrop-blur-sm bg-black/20 px-4 py-2 rounded-full">
-          Owned by <span className="text-primary-orange font-bold">AryanCalix</span>
+          Owned by <span className="text-white font-bold">AryanCalix</span>
         </p>
       </div>
       

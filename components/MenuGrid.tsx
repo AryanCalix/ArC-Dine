@@ -78,7 +78,7 @@ export default function MenuGrid({ onOpenCart, onAddToCart }: MenuGridProps) {
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-2">
         <p className="text-sm text-white/60 font-semibold tracking-wide">
-          Created by <span className="text-primary-orange">AryanCalix</span>
+          Created by <span className="text-white">AryanCalix</span>
         </p>
       </div>
       <h2 className="text-4xl font-bold text-center mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-colors duration-300">

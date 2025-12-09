@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <p className="text-white/80 text-sm mb-2">
           Made with ❤️ by{' '}
-          <span className="text-primary-orange font-bold">AryanCalix</span>
+          <span className="text-white font-bold">AryanCalix</span>
         </p>
         <p className="text-white/60 text-xs">
           © {new Date().getFullYear()} ArC Group. All rights reserved.
