@@ -38,7 +38,7 @@ export default function OrderHistory() {
         <h2 className="text-3xl font-bold text-primary-orange mb-4">
           No Orders Yet
         </h2>
-        <p className="text-gray-600 text-lg font-semibold">
+        <p className="text-gray-600 dark:text-gray-300 text-lg font-semibold">
           Your order history will appear here after you make your first purchase
         </p>
       </div>
@@ -63,14 +63,14 @@ export default function OrderHistory() {
             {/* Order Header */}
             <div className="p-6 border-b border-primary-orange/20">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Order {order.id}
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  Order #{order.id}
                 </h3>
                 <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(order.status)}`}>
                   {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                 </span>
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 {formatDate(order.timestamp)}
               </p>
             </div>
@@ -82,8 +82,8 @@ export default function OrderHistory() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{item.image}</span>
                     <div>
-                      <p className="font-bold text-gray-900">{item.name}</p>
-                      <p className="text-sm text-gray-600">
+                      <p className="font-bold text-gray-900 dark:text-white">{item.name}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
                         Rp {item.price.toLocaleString('id-ID')} × {item.quantity}
                       </p>
                     </div>
@@ -98,7 +98,7 @@ export default function OrderHistory() {
             {/* Order Total */}
             <div className="p-6 bg-gradient-to-b from-white to-orange-50 border-t-2 border-primary-orange/30">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-lg font-bold text-gray-900">Total:</span>
+                <span className="text-lg font-bold text-gray-900 dark:text-white">Total:</span>
                 <span className="text-2xl font-bold text-primary-orange">
                   Rp {order.total.toLocaleString('id-ID')}
                 </span>
@@ -135,7 +135,7 @@ export default function OrderHistory() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setConfirmDelete(null)}
-                      className="flex-1 py-2 px-4 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400 transition-colors"
+                      className="flex-1 py-2 px-4 bg-gray-300 text-gray-700 dark:bg-gray-600 dark:text-white rounded-lg font-semibold hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors"
                     >
                       Cancel
                     </motion.button>

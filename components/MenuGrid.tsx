@@ -103,7 +103,7 @@ export default function MenuGrid({ onOpenCart, onAddToCart }: MenuGridProps) {
               {/* Item Info */}
               <div className="space-y-3">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     {item.name}
                   </h3>
                   <span className="inline-block px-3 py-1 bg-primary-orange/20 text-primary-orange text-xs rounded-full font-semibold">
@@ -111,7 +111,7 @@ export default function MenuGrid({ onOpenCart, onAddToCart }: MenuGridProps) {
                   </span>
                 </div>
                 
-                <p className="text-gray-600 text-sm min-h-[40px]">
+                <p className="text-gray-600 dark:text-gray-300 text-sm min-h-[40px]">
                   {item.description}
                 </p>
                 
