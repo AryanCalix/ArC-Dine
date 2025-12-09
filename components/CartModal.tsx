@@ -41,11 +41,11 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t-2 border-primary-orange rounded-t-3xl z-50 max-h-[80vh] overflow-hidden flex flex-col shadow-2xl"
+            className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t-2 border-primary-orange rounded-t-3xl z-50 max-h-[80vh] overflow-hidden flex flex-col shadow-2xl"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-primary-orange/20">
-              <h2 className="text-2xl font-bold text-gray-900">🛒 Your Cart</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🛒 Your Cart</h2>
               <button
                 onClick={onClose}
                 className="text-gray-600 hover:text-gray-900 text-2xl transition-colors"
@@ -71,12 +71,12 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
-                      className="flex items-center gap-4 bg-white border-2 border-primary-orange/30 p-4 rounded-lg shadow-md hover:shadow-lg transition-all"
+                      className="flex items-center gap-4 bg-white dark:bg-gray-800 border-2 border-primary-orange/30 p-4 rounded-lg shadow-md hover:shadow-lg transition-all"
                     >
                       <div className="text-4xl">{item.image}</div>
                       
                       <div className="flex-1">
-                        <h3 className="font-bold text-gray-900">{item.name}</h3>
+                        <h3 className="font-bold text-gray-900 dark:text-white">{item.name}</h3>
                         <p className="text-primary-orange font-bold text-lg">
                           Rp {item.price.toLocaleString('id-ID')}
                         </p>
@@ -89,7 +89,7 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
                         >
                           -
                         </button>
-                        <span className="w-8 text-center font-bold text-gray-900">{item.quantity}</span>
+                        <span className="w-8 text-center font-bold text-gray-900 dark:text-white">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           className="w-8 h-8 bg-primary-orange text-white rounded-lg hover:bg-orange-600 transition-colors font-bold"
@@ -112,9 +112,9 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
 
             {/* Footer */}
             {cart.length > 0 && (
-              <div className="p-6 border-t-2 border-primary-orange/30 bg-gradient-to-b from-white to-orange-50">
+              <div className="p-6 border-t-2 border-primary-orange/30 bg-gradient-to-b from-white to-orange-50 dark:from-gray-800 dark:to-gray-900">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xl font-bold text-gray-900">Total:</span>
+                  <span className="text-xl font-bold text-gray-900 dark:text-white">Total:</span>
                   <span className="text-3xl font-bold text-primary-orange drop-shadow-sm">
                     Rp {getCartTotal().toLocaleString('id-ID')}
                   </span>
