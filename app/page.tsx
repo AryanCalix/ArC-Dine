@@ -10,13 +10,30 @@ import LoadingSpinner from '@/components/LoadingSpinner'
 import Toast from '@/components/Toast'
 import Footer from '@/components/Footer'
 import DarkModeToggle from '@/components/DarkModeToggle'
+import AuthForm from '@/components/AuthForm'
 import { CartProvider } from '@/context/CartContext'
+import { useAuth } from '@/context/AuthContext'
 import { useToast } from '@/hooks/useToast'
 
 function HomeContent() {
   const [activeTab, setActiveTab] = useState('menu')
   const [showCart, setShowCart] = useState(false)
   const { toast, showToast, hideToast } = useToast()
+  const { user, loading, signOut } = useAuth()
+
+  // Show loading spinner while checking auth
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    )
+  }
+
+  // Show login form if not authenticated
+  if (!user) {
+    return <AuthForm />
+  }
 
   return (
     <>
@@ -24,6 +41,19 @@ function HomeContent() {
       <DarkModeToggle />
       
       <main className="min-h-screen pb-24 relative z-10">
+        {/* User Info & Logout */}
+        <div className="absolute top-4 right-4 z-50 flex items-center gap-4">
+          <div className="text-white text-sm bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            👤 {user.email}
+          </div>
+          <button
+            onClick={signOut}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium transition"
+          >
+            Logout
+          </button>
+        </div>
+
         {/* Hero Section with 3D Animation */}
         <Suspense fallback={<LoadingSpinner />}>
           <Hero3D />
