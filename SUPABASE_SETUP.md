@@ -111,6 +111,11 @@ Would you like me to implement any of these enhancements?
 - Check that the values don't have quotes or extra spaces
 - Restart the dev server after adding environment variables
 
+### Vercel Deployment Issues
+- ✅ **Fixed**: Build errors on Vercel have been resolved with lazy-loading implementation
+- For deployment instructions, see `VERCEL_DEPLOYMENT.md`
+- Remember to add environment variables in Vercel Dashboard (Settings → Environment Variables)
+
 ### Can't sign in after creating account
 - Check if email confirmation is enabled
 - Look in Supabase dashboard under **Authentication** > **Users** to see if user was created

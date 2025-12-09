@@ -1,6 +1,6 @@
 # Restaurant Menu Website 🍽️
 
-A modern, full-stack Next.js restaurant menu website with a stunning orange and black color scheme, featuring 3D spinning food animations and complete transaction management.
+A modern, full-stack Next.js restaurant menu website with a stunning orange and black color scheme, featuring 3D spinning food animations, Supabase authentication, and complete transaction management.
 
 **Created by AryanCalix**
 
@@ -8,12 +8,14 @@ A modern, full-stack Next.js restaurant menu website with a stunning orange and 
 
 - 🎨 **Beautiful Design**: Orange and black color scheme with modern UI/UX
 - 🎭 **3D Animations**: Spinning food animation using Three.js
+- 🔐 **Authentication**: Supabase-powered user authentication (login/signup)
 - 📱 **Bottom Navigation**: Easy-to-use navigation bar at the bottom
 - 🛒 **Shopping Cart**: Full cart functionality with add/remove/update items
 - 💾 **Data Persistence**: Cart and order history saved in localStorage
 - 📋 **Order History**: Track all your past orders
 - 🎯 **Responsive**: Works perfectly on mobile, tablet, and desktop
 - ⚡ **Fast Performance**: Built with Next.js 14 and optimized for speed
+- 🚀 **Vercel Ready**: Optimized for deployment with build fixes applied
 
 ## 🍴 Menu Items
 
@@ -29,6 +31,7 @@ A modern, full-stack Next.js restaurant menu website with a stunning orange and 
 
 - Node.js 18.x or higher
 - npm or yarn package manager
+- Supabase account (free tier available)
 
 ### Installation
 
@@ -39,15 +42,27 @@ A modern, full-stack Next.js restaurant menu website with a stunning orange and 
    yarn install
    ```
 
-2. **Run the development server:**
+2. **Set up Supabase Authentication:**
+   - See detailed guide: [SUPABASE_SETUP.md](./SUPABASE_SETUP.md)
+   - Create a Supabase project
+   - Copy `.env.local.example` to `.env.local`
+   - Add your Supabase credentials to `.env.local`
+
+3. **Run the development server:**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-3. **Open your browser:**
+4. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📚 Documentation
+
+- **[SUPABASE_SETUP.md](./SUPABASE_SETUP.md)** - Complete guide for setting up Supabase authentication
+- **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)** - Step-by-step deployment guide for Vercel
+- **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Pre and post-deployment checklist
 
 ### Build for Production
 
