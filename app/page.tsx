@@ -45,7 +45,7 @@ function HomeContent() {
     <>
       {/* Project Notice Banner */}
       <div className="bg-orange-500 text-white text-center py-2 px-4 font-medium text-sm md:text-base sticky top-0 z-50 shadow-lg">
-        ⚠️ This is just a Project, not a real working web
+        This is just a Project, not a real working web
       </div>
 
       {/* Dark Mode Toggle */}
