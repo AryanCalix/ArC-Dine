@@ -33,7 +33,7 @@ export default function OrderHistory() {
 
   if (orders.length === 0) {
     return (
-      <div className="max-w-4xl mx-auto text-center py-12">
+      <div className="max-w-4xl mx-auto px-4 text-center py-12">
         <div className="text-8xl mb-6 animate-float">📋</div>
         <h2 className="text-3xl font-bold text-primary-orange mb-4">
           No Orders Yet
@@ -46,7 +46,7 @@ export default function OrderHistory() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto px-4">
       <h2 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
         📋 Order History
       </h2>
