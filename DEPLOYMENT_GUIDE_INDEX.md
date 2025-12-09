@@ -1,5 +1,13 @@
 # 📖 ArC Dine - Deployment Guide Index
 
+## 🔴 URGENT: Getting "Missing Supabase environment variables" Error?
+
+**👉 READ THIS FIRST**: [VERCEL_ENV_SETUP.md](./VERCEL_ENV_SETUP.md)
+
+This means you need to add environment variables to Vercel Dashboard. It takes 5 minutes to fix!
+
+---
+
 ## 🎯 Start Here
 
 If you're ready to deploy your application, follow this guide in order:
