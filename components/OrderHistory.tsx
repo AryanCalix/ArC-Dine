@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { useCart } from '@/context/CartContext'
+import { useState } from 'react'
 
 export default function OrderHistory() {
-  const { orders } = useCart()
+  const { orders, deleteOrder, cancelOrder } = useCart()
+  const [confirmDelete, setConfirmDelete] = useState<string | null>(null)
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -95,11 +97,60 @@ export default function OrderHistory() {
 
             {/* Order Total */}
             <div className="p-6 bg-gradient-to-b from-white to-orange-50 border-t-2 border-primary-orange/30">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-4">
                 <span className="text-lg font-bold text-gray-900">Total:</span>
                 <span className="text-2xl font-bold text-primary-orange">
                   Rp {order.total.toLocaleString('id-ID')}
                 </span>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                {order.status === 'pending' && (
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => cancelOrder(order.id)}
+                    className="flex-1 py-2 px-4 bg-yellow-500/20 text-yellow-700 rounded-lg font-semibold hover:bg-yellow-500/30 transition-colors border-2 border-yellow-500/30 flex items-center justify-center gap-2"
+                  >
+                    <span>⚠️</span>
+                    <span>Cancel Order</span>
+                  </motion.button>
+                )}
+                
+                {confirmDelete === order.id ? (
+                  <div className="flex-1 flex gap-2">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => {
+                        deleteOrder(order.id)
+                        setConfirmDelete(null)
+                      }}
+                      className="flex-1 py-2 px-4 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition-colors shadow-md"
+                    >
+                      ✓ Confirm Delete
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setConfirmDelete(null)}
+                      className="flex-1 py-2 px-4 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400 transition-colors"
+                    >
+                      Cancel
+                    </motion.button>
+                  </div>
+                ) : (
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setConfirmDelete(order.id)}
+                    className="flex-1 py-2 px-4 bg-red-500/20 text-red-600 rounded-lg font-semibold hover:bg-red-500/30 transition-colors border-2 border-red-500/30 flex items-center justify-center gap-2"
+                  >
+                    <span>🗑️</span>
+                    <span>Delete Order</span>
+                  </motion.button>
+                )}
               </div>
             </div>
           </motion.div>

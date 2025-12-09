@@ -31,6 +31,8 @@ interface CartContextType {
   updateQuantity: (itemId: number, quantity: number) => void
   clearCart: () => void
   checkout: () => void
+  deleteOrder: (orderId: string) => void
+  cancelOrder: (orderId: string) => void
   getCartTotal: () => number
   getCartCount: () => number
 }
@@ -134,6 +136,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return cart.reduce((count, item) => count + item.quantity, 0)
   }
 
+  const deleteOrder = (orderId: string) => {
+    setOrders(prevOrders => prevOrders.filter(order => order.id !== orderId))
+  }
+
+  const cancelOrder = (orderId: string) => {
+    setOrders(prevOrders =>
+      prevOrders.map(order =>
+        order.id === orderId ? { ...order, status: 'cancelled' as const } : order
+      )
+    )
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -144,6 +158,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         updateQuantity,
         clearCart,
         checkout,
+        deleteOrder,
+        cancelOrder,
         getCartTotal,
         getCartCount,
       }}
