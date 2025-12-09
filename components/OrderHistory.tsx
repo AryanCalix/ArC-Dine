@@ -61,7 +61,7 @@ export default function OrderHistory() {
             className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-xl border-2 border-primary-orange/30 overflow-hidden shadow-lg hover:shadow-xl transition-all"
           >
             {/* Order Header */}
-            <div className="p-6 border-b border-primary-orange/20">
+            <div className="p-6 border-b border-primary-orange/20 bg-white dark:bg-gray-800">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   Order {order.id}
@@ -70,13 +70,13 @@ export default function OrderHistory() {
                   {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                 </span>
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 {formatDate(order.timestamp)}
               </p>
             </div>
 
             {/* Order Items */}
-            <div className="p-6 space-y-3">
+            <div className="p-6 space-y-3 bg-white dark:bg-gray-800">
               {order.items.map((item) => (
                 <div key={item.id} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
