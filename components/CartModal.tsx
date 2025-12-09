@@ -48,7 +48,7 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🛒 Your Cart</h2>
               <button
                 onClick={onClose}
-                className="text-gray-600 hover:text-gray-900 text-2xl transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-2xl transition-colors"
               >
                 ✕
               </button>
@@ -59,8 +59,8 @@ export default function CartModal({ isOpen, onClose, onCheckoutSuccess }: CartMo
               {cart.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="text-6xl mb-4">🛒</div>
-                  <p className="text-gray-600 text-lg font-semibold">Your cart is empty</p>
-                  <p className="text-gray-500 text-sm mt-2">Add some delicious items!</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-lg font-semibold">Your cart is empty</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">Add some delicious items!</p>
                 </div>
               ) : (
                 <div className="space-y-4">

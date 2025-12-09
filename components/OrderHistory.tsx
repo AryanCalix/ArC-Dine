@@ -38,7 +38,7 @@ export default function OrderHistory() {
         <h2 className="text-3xl font-bold text-primary-orange mb-4">
           No Orders Yet
         </h2>
-        <p className="text-gray-600 text-lg font-semibold">
+        <p className="text-gray-600 dark:text-gray-300 text-lg font-semibold">
           Your order history will appear here after you make your first purchase
         </p>
       </div>
@@ -47,7 +47,7 @@ export default function OrderHistory() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+      <h2 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
         📋 Order History
       </h2>
 
@@ -111,7 +111,7 @@ export default function OrderHistory() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => cancelOrder(order.id)}
-                    className="flex-1 py-2 px-4 bg-yellow-500/20 text-yellow-700 rounded-lg font-semibold hover:bg-yellow-500/30 transition-colors border-2 border-yellow-500/30 flex items-center justify-center gap-2"
+                    className="flex-1 py-2 px-4 bg-yellow-500/20 text-yellow-700 dark:text-yellow-500 rounded-lg font-semibold hover:bg-yellow-500/30 transition-colors border-2 border-yellow-500/30 flex items-center justify-center gap-2"
                   >
                     <span>⚠️</span>
                     <span>Cancel Order</span>
