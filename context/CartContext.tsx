@@ -50,14 +50,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart and orders from Supabase when user changes
   useEffect(() => {
-    if (user) {
-      loadCartFromSupabase()
-      loadOrdersFromSupabase()
-    } else {
-      setCart([])
-      setOrders([])
-      setLoading(false)
+    const loadData = async () => {
+      if (user) {
+        setLoading(true)
+        await Promise.all([
+          loadCartFromSupabase(),
+          loadOrdersFromSupabase()
+        ])
+        setLoading(false)
+      } else {
+        setCart([])
+        setOrders([])
+        setLoading(false)
+      }
     }
+    
+    loadData()
   }, [user])
 
   // Load cart from Supabase
@@ -87,8 +95,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
     } catch (error) {
       console.error('Error loading cart:', error)
-    } finally {
-      setLoading(false)
     }
   }
 
