@@ -19,7 +19,7 @@ export default function BottomNav({ activeTab, setActiveTab, onCartClick }: Bott
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-primary-orange/30 z-50 transition-all duration-300">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black border-t-2 border-primary-orange/30 z-50 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="flex items-center justify-around py-4">
           {navItems.map((item) => (
@@ -30,7 +30,7 @@ export default function BottomNav({ activeTab, setActiveTab, onCartClick }: Bott
               className={`flex flex-col items-center space-y-1 px-6 py-2 rounded-lg transition-all duration-200 ${
                 activeTab === item.id
                   ? 'text-primary-orange bg-primary-orange/20 scale-110'
-                  : 'text-gray-400 hover:text-primary-orange hover:bg-primary-orange/10'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-primary-orange hover:bg-primary-orange/10'
               }`}
             >
               <span className="text-2xl">{item.icon}</span>
@@ -42,7 +42,7 @@ export default function BottomNav({ activeTab, setActiveTab, onCartClick }: Bott
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={onCartClick}
-            className="relative flex flex-col items-center space-y-1 px-6 py-2 rounded-lg text-gray-400 hover:text-primary-orange transition-all duration-200"
+            className="relative flex flex-col items-center space-y-1 px-6 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-primary-orange transition-all duration-200"
           >
             <span className="text-2xl">🛒</span>
             <span className="text-sm font-medium">Cart</span>
