@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import MenuGrid from '@/components/MenuGrid'
 import BottomNav from '@/components/BottomNav'
 import CartModal from '@/components/CartModal'
@@ -20,9 +20,15 @@ function HomeContent() {
   const [showCart, setShowCart] = useState(false)
   const { toast, showToast, hideToast } = useToast()
   const { user, loading, signOut } = useAuth()
+  const [isMounted, setIsMounted] = useState(false)
 
-  // Show loading spinner while checking auth
-  if (loading) {
+  // Track client-side mount
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  // Show loading spinner while checking auth or not yet mounted
+  if (!isMounted || loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <LoadingSpinner />
